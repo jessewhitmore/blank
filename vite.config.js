@@ -3,31 +3,31 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   server: {
     hmr: true,
-    host:'0.0.0.0',
+    host: '0.0.0.0',
     port: 8080,
     fs: {
       strict: false,
       serve: {
         '/': '', // Serve files from the root of the _site directory
         watch: {
+          paths: ['src'], // Watch the entire src directory
           usePolling: true,
         }
       }
     }
   },
   build: {
-    outDir: '_site', // Specify the output directory for bundled JS files
+    outDir: '_site',
     assetsDir: 'assets/js',
     rollupOptions: {
       input: {
-        main: 'src/js/main.js', // Entry point for your JavaScript bundle
-        // Add more entry points if needed
+        main: 'src/js/main.js',
       },
       output: {
         entryFileNames: `assets/js/[name].js`,
         chunkFileNames: `assets/js/[name].js`,
-        assetFileNames: `assets/js/[name].[ext]`
-      }
-    }
-  }
+        assetFileNames: `assets/js/[name].[ext]`,
+      },
+    },
+  },
 });

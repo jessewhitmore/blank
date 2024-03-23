@@ -1,0 +1,19 @@
+{
+  "name": "blank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run eleventy:serve\" \"npm run vite\"",
+    "eleventy:serve": "eleventy --serve",
+    "vite": "vite"  
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "concurrently": "^8.2.2",
+    "vite": "^5.2.2"
+  }
+}
